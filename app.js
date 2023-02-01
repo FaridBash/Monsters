@@ -21,7 +21,7 @@ const playerDex=document.getElementsByClassName('dex');
 //Location names Array
 let gameArenas=['krustyKrab','forest','castle','waterfall','appleseeds-bootcamp'];
 //arenas-pictures <a tags>(when pressed the compatible monster cards show on the "contracts" page)
-const krustyKrab=document.querySelector('krusty-krab-btn');
+const krustyKrab=document.querySelector('#krusty-krab');
 const forest=document.querySelector('#forest');
 const castle=document.querySelector('#castle');
 const waterfall=document.querySelector('#waterfall');
@@ -93,7 +93,7 @@ function updateHealth(){
         document.getElementsByClassName('player-hp')[0].innerText=`Player Hp: ${victimProfile().healthPoints}`;
     }
     if(victimProfile()===MonsArr[0]){
-        document.getElementsByClassName('monster-hp')[0].innerText=`MonsArr[0] Hp: ${victimProfile().healthPoints}`;
+        document.getElementsByClassName('monster-hp')[0].innerText=`Monster Hp: ${victimProfile().healthPoints}`;
     }
 }
 const attackBtn=document.getElementsByClassName('attack');
@@ -173,12 +173,12 @@ function declareWinner(pl){
 // monsters for that map:
 for(let x=0;x<gameArenas.length;x++){
     if (gameArenas[x]==="krustyKrab"){
-        return 
+        // return  ;
     }
 }
-krustyKrab.addEventListener('click',function(){
+// krustyKrab.addEventListener('click',e=>{
     
-})
+// });
 //Match each location with random number of monsters between 5-10.
 function random1_5(){
    return Math.floor(Math.random()*5)+1;
