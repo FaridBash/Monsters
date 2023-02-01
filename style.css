@@ -30,7 +30,7 @@ body {
 .combat-container {
   display: flex;
   width: 100%;
-  height:100vh;
+  height: 100vh;
   justify-content: center;
   background-image: url("/assets/img/combat-back.jpg");
 }
@@ -84,8 +84,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  position:absolute;
-  z-index:11;
+  position: absolute;
+  z-index: 11;
 }
 
 .btn {
@@ -141,9 +141,9 @@ body {
   display: flex;
   height: 100vh;
   padding: 5rem;
-  background-image: url('/assets/img/inn.jpg');
+  background-image: url("/assets/img/inn.jpg");
   background-repeat: no-repeat;
-  background-size: cover ;
+  background-size: cover;
 }
 
 .map-wrap {
@@ -182,6 +182,84 @@ body {
 
 .btn-loc:active {
   box-shadow: none;
+}
+
+.shop-container {
+  width: 100%;
+  height: 100vh;
+  background-image: url("/assets/img/shop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shop-content {
+  display: grid;
+  grid-template-areas:
+    "hp defense blank"
+    "str frog burger";
+  grid-gap: 15rem;
+  background-color: brown;
+  padding: 10rem;
+}
+
+.shop-content .no-stock {
+    position:relative;
+}
+
+.shop-content .no-stock::before {
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-color: black;
+    top:0;
+    left:0;
+    opacity: 0.6;
+}
+
+.shop-content .shop-item {
+  width: 10rem;
+  height: 10rem;
+  /* border: 1px solid black; */
+  display:flex;
+  flex-direction: column;
+}
+
+.shop-content .shop-item p {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.shop-content .shop-item .no-stock-p {
+  text-align: center;
+  font-size: 1rem;
+}
+
+.shop-content .shop-item img {
+  width: 100%;
+  height: 100%;
+}
+
+.hp-pot {
+  grid-area: hp;
+}
+.def-pot {
+  grid-area: defense;
+}
+.black-pot {
+  grid-area: blank;
+}
+.str-pot {
+  grid-area: str;
+}
+.frog-pot {
+  grid-area: frog;
+}
+.burger-pot {
+  grid-area: burger;
 }
 
 @media screen and (max-width: 1024px) {
