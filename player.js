@@ -13,7 +13,7 @@ let players=[
 ];
 
 const dexterityGenerator=(player)=>{
-   let rndm=Math.floor(Math.random()*20);
+   let rndm=Math.floor(Math.random()*20)+1;
    return player.dexterity+=rndm;
 }
 
