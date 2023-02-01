@@ -1,13 +1,14 @@
 import { randomNumbGenerator } from "./app.js";
 export const Monster={
     name: "myMosnter",
-    ntrength: 100,
-    defence: 100,
+    strength: 25,
+    defence: 29,
+    dexterity: 2+randomNumbGenerator(),
+    gold: 0,
+    potion:0,
     level: 100,
-    health: 100,
-    monsterXpRewards: 100,
-    dexterity: randomNumbGenerator(),
-    gold: 100,
+    healthPoints: 100,
+    currentXp: 100,
 }
 
 
