@@ -5,7 +5,7 @@ export const players=
       type:"player",
       strength:22,
       defence:30,
-      dexterity:6+randomNumbGenerator(),//random
+      dexterity:randomNumbGenerator(),//random
       gold:0,
       potion:0,
       level:1,

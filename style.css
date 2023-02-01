@@ -7,6 +7,11 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 body {
   width: 100%;
   height: 100%;
@@ -30,7 +35,7 @@ body {
 .combat-container {
   display: flex;
   width: 100%;
-  height:100vh;
+  height: 100vh;
   justify-content: center;
   background-image: url("/assets/img/combat-back.jpg");
 }
@@ -84,8 +89,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  position:absolute;
-  z-index:11;
+  position: absolute;
+  z-index: 11;
 }
 
 .btn {
@@ -141,6 +146,9 @@ body {
   display: flex;
   height: 100vh;
   padding: 5rem;
+  background-image: url("/assets/img/inn.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .map-wrap {
@@ -152,6 +160,7 @@ body {
   width: 100%;
   border: 13px rgba(96, 55, 15, 0.832) solid;
   border-radius: 10px;
+  opacity: 0.7;
 }
 
 .button-locations {
@@ -164,10 +173,13 @@ body {
 
 .btn-loc {
   padding: 1rem;
-  font-size: 1.8rem;
   border-radius: 10px;
   border: none;
   width: 70%;
+}
+
+.btn-loc a {
+  font-size: 1.8rem;
 }
 
 .btn-loc:hover {
@@ -178,6 +190,105 @@ body {
 
 .btn-loc:active {
   box-shadow: none;
+}
+
+.shop-container {
+  width: 100%;
+  height: 100vh;
+  background-image: url("/assets/img/shop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shop-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "hp defense blank"
+    "str frog burger";
+  grid-gap: 15rem;
+  padding: 8rem;
+  position: relative;
+  z-index:10;
+}
+
+.shop-content::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: brown;
+  opacity: 0.8;
+}
+
+.shop-content .no-stock {
+  position: relative;
+}
+
+.shop-content .no-stock::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  top: 0;
+  left: 0;
+  opacity: 0.6;
+}
+
+.shop-content .shop-item {
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index:10;
+}
+
+.shop-content .shop-item .item-img-wrap {
+  width: 10rem;
+  height: 10rem;
+}
+
+.shop-content .shop-item p {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+.shop-content .shop-item .no-stock-p {
+  text-align: center;
+  font-size: 1rem;
+}
+
+.shop-content .shop-item .item-img-wrap img {
+  width: 100%;
+  height: 100%;
+}
+
+.hp-pot {
+  grid-area: hp;
+}
+.def-pot {
+  grid-area: defense;
+}
+.black-pot {
+  grid-area: blank;
+}
+.str-pot {
+  grid-area: str;
+}
+.frog-pot {
+  grid-area: frog;
+}
+.burger-pot {
+  grid-area: burger;
 }
 
 @media screen and (max-width: 1024px) {
