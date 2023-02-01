@@ -6,7 +6,7 @@ export const Monster={
     dexterity: 2+randomNumbGenerator(),
     gold: 0,
     potion:0,
-    level: 100,
+    level: 1,
     healthPoints: 100,
     currentXp: 100,
 }
