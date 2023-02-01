@@ -141,6 +141,9 @@ body {
   display: flex;
   height: 100vh;
   padding: 5rem;
+  background-image: url('/assets/img/inn.jpg');
+  background-repeat: no-repeat;
+  background-size: cover ;
 }
 
 .map-wrap {
