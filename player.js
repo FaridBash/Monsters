@@ -1,5 +1,5 @@
 
-export let players=[
+export const players=
 
    {
       name:"Fearless renegade",
@@ -12,14 +12,14 @@ export let players=[
       healthPoints:100,
       currentXP:0
    }
-];
+
 
 function randomNumbGenerator(){
   return Math.floor(Math.random()*20)+1;
 }
 
-Qselector.addEventListerner("click",function attack(player){
-   let result=player.strength+=randomNumbGenerator();
+// export Qselector.addEventListerner("click",function attack(player){
+//    let result=player.strength+=randomNumbGenerator();
 
-})
+// })
 
