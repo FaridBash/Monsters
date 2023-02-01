@@ -85,21 +85,34 @@ attackBtn[0].addEventListener('click', e=>{
 
 
 function damageCalc(){
-   return((randomNumbGenerator()+attackerProfile().strength)*attackerProfile().level)-attackerProfile().defence;
+    const num=((randomNumbGenerator()+attackerProfile().strength)*attackerProfile().level)-attackerProfile().defence;
+
+    console.log(num);
+    if(num>0){
+        return num;
+    }
+
+    else return 0;
 }
 
 function attack(){
+<<<<<<< HEAD
    if(damageCalc>0){
       return victimProfile.healthPoints-=damageCalc();
+=======
+
+if(damageCalc()>0){
+      victimProfile().healthPoints-=damageCalc();
+>>>>>>> 60cbe20552b6d235dbe50b820f11c83c1c52f5fd
    }
    updateHealth();
+   winner();
 }
 
 function winner(){
-   if (victimProfile().healthPoints<=0){
-
-   }
-   //else switch turns..
+    if(victimProfile().healthPoints<=0){
+        alert(victimProfile().name +" LOST");
+       }
 }
 
 

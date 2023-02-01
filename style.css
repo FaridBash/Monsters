@@ -1,18 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Aboreto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Aboreto&family=Space+Grotesk&display=swap");
 
 * {
   padding: 0;
   margin: 0;
   font-size: 62.5%;
+  box-sizing: border-box;
 }
 
 body {
   width: 100%;
   height: 100%;
-}
-
-div {
-  border: solid black 1px;
+  color: white;
+  background-color: black;
+  font-family: "Space Grotesk", sans-serif;
 }
 
 .combat-screen h1 {
@@ -32,6 +32,7 @@ div {
   width: 100%;
   height: 80%;
   justify-content: center;
+  background-image: url("/assets/img/combat-back.jpg");
 }
 
 .monster,
@@ -40,16 +41,33 @@ div {
   flex-direction: column;
   width: 20%;
   height: 80vh;
+  position: relative;
+  z-index: 10;
+  border: 1px solid black;
+}
+
+.monster::before,
+.player::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: gray;
+  opacity: 0.6;
+  z-index: -2;
 }
 
 .img-wrap {
   width: 100%;
   height: 60%;
+  padding: 1.5rem;
 }
 
 .img-wrap img {
-    width:100%;
-    height:100%;
+  width: 100%;
+  height: 100%;
 }
 
 .hp {
@@ -70,10 +88,54 @@ div {
 
 .btn {
   font-size: 2rem;
+  margin: 0 1rem;
+  border-radius: 10px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
+
+.btn:hover {
+  background-color: gray;
+  cursor: pointer;
+  box-shadow: 1px 3px 2px 1px;
+}
+
+.btn:active {
+  box-shadow: none;
+}
+
+.btn p {
+  font-size: 2rem;
+  margin-left: 0.5rem;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.btn .btn-icon {
+  width: 2.3rem;
+  height: 2.3rem;
+}
+
+.btn .btn-icon img {
+  height: 100%;
+}
+
+/* .btn img {
+    width:100%;
+    height:100%;
+} */
 
 .player-details p,
 .player-details p span {
-    margin:1rem;
+  margin: 1rem;
   font-size: 2rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .monster,
+  .player {
+    width: 50%;
+  }
 }
