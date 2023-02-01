@@ -197,40 +197,48 @@ body {
 
 .shop-content {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   grid-template-areas:
     "hp defense blank"
     "str frog burger";
   grid-gap: 15rem;
   background-color: brown;
-  padding: 10rem;
+  padding: 8rem;
 }
 
 .shop-content .no-stock {
-    position:relative;
+  position: relative;
 }
 
 .shop-content .no-stock::before {
-    content:'';
-    position:absolute;
-    width:100%;
-    height:100%;
-    background-color: black;
-    top:0;
-    left:0;
-    opacity: 0.6;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  top: 0;
+  left: 0;
+  opacity: 0.6;
 }
 
 .shop-content .shop-item {
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.shop-content .shop-item .item-img-wrap {
   width: 10rem;
   height: 10rem;
-  /* border: 1px solid black; */
-  display:flex;
-  flex-direction: column;
 }
 
 .shop-content .shop-item p {
   text-align: center;
   font-size: 2rem;
+  margin-top: 1rem;
 }
 
 .shop-content .shop-item .no-stock-p {
@@ -238,7 +246,7 @@ body {
   font-size: 1rem;
 }
 
-.shop-content .shop-item img {
+.shop-content .shop-item .item-img-wrap img {
   width: 100%;
   height: 100%;
 }
