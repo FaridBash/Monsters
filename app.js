@@ -98,13 +98,15 @@ function winner(){
 //Location names Array
 let gameArenas=['desert','castle','Fortress','waterfall','atlantis'];
 //Match each location with random number of monsters between 5-10.
-function random5_10(){
-   return Math.floor(Math.random()*10)+5;
+function random1_5(){
+   return Math.floor(Math.random()*5)+1;
 }
 
 
-function matchMonsterArena(){
-    for(let i=0;i<gameArenas.length;i++){
-        Monster[i]=gameArenas[i];
-    }
-}
+// function matchMonsterArena(){
+//     for(let i=0;i<gameArenas.length;i++){
+        
+//     }
+//     #monsterImg.setAttribute("src",`./assets/monster-${random1_5()}`); 
+//     #arenaImg.setAttribute("src",`./assets/arena-${random1_5()}`);
+// }
