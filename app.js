@@ -89,7 +89,7 @@ if(damageCalc()>0){
 function winner(){
     if(victimProfile().healthPoints<=0){
         alert(victimProfile().name +" LOST");
-       }
+    }
 }
 
 
