@@ -3,7 +3,7 @@
       name:"Fearless renegade",
       strength:20,
       defence:30,
-      dexterity:3+dexterityGenerator(),//random
+      dexterity:3+randomNumbGenerator(),//random
       goldAmount:5,
       potion:0,
       level:1,
@@ -12,7 +12,12 @@
    }
 ];
 
-function dexterityGenerator(){
+function randomNumbGenerator(){
   return Math.floor(Math.random()*20)+1;
 }
+
+Qselector.addEventListerner("click",function attack(player){
+   let result=player.strength+=randomNumbGenerator();
+
+})
 
