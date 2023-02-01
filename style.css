@@ -15,7 +15,7 @@ body {
 }
 
 div {
-  border: solid black 1px;
+  /* border: solid gray 1px; */
 }
 
 .combat-screen h1 {
@@ -46,6 +46,7 @@ div {
   height: 80vh;
   position:relative;
   z-index:10;
+  border: 1px solid black;
 }
 
 .monster::before,
@@ -90,6 +91,37 @@ div {
 
 .btn {
   font-size: 2rem;
+  margin: 0 1rem;
+  border-radius: 10px;
+  border:none;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.btn:hover {
+    background-color: gray;
+    cursor: pointer;
+    box-shadow: 1px 3px 2px 1px ;
+}
+
+.btn:active {
+    box-shadow: none;
+}
+
+.btn p {
+    font-size: 2rem;
+    margin-left:.5rem;
+}
+
+.btn .btn-icon {
+    width:2.3rem;
+    height:2.3rem;
+}
+
+.btn .btn-icon img {
+    width:100%;
 }
 
 /* .btn img {
