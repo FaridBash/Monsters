@@ -18,14 +18,14 @@ function attacker(){
 }
 
 attacker();
-if(monsterTurn===false) alert("player is attacking");
-else alert("monster is attacking");
+if(monsterTurn===false) console.log("player is attacking");
+else console.log("monster is attacking");
   
 // universal functions end
 const monsterHp=document.getElementsByClassName('monster-hp');
-monsterHp[0].innerText+=`: ${Monster.strength}`;
+monsterHp[0].innerText+=`: ${Monster.healthPoints}`;
 const playerHp=document.getElementsByClassName('player-hp');
-playerHp[0].innerText+=`: ${players.strength}`;
+playerHp[0].innerText+=`: ${players.healthPoints}`;
 const playerName=document.getElementsByClassName('player-name');
 playerName[0].innerText=`${players.name}`;
 const playerPotion=document.getElementsByClassName('potion-num');
@@ -38,32 +38,38 @@ const attackBtn=document.getElementsByClassName('attack');
 const runAwayBtn=document.getElementsByClassName('run');
 const drinkPotionBtn=document.getElementsByClassName('drink');
 
-let attackerProfile=monsterTurn===false?players:Monster;
-let victimProfile=monsterTurn===true?players:Monster;
+// let attackerProfile=monsterTurn===false?players:Monster;
+// let victimProfile=monsterTurn===true?players:Monster;
+let victimProfile=()=>{
+    return monsterTurn===true?players:Monster;
+}
+let attackerProfile=()=>{
+    return monsterTurn===false?players:Monster;
+}
+
 
 attackBtn[0].addEventListener('click', e=>{
-
-    alert(Monster.monsterDexterity);
-    alert(players.dexterity);
+    attack();
+    // alert(Monster.monsterDexterity);
+    // alert(players.dexterity);
     console.log('atack');
-
 
 });
 
 
-
 function damageCalc(){
-   return((randomNumbGenerator()+attackerProfile.strength)*attackerProfile.level)-attackerProfile.defence;
+   return((randomNumbGenerator()+attackerProfile().strength)*attackerProfile().level)-attackerProfile().defence;
 }
 
 function attack(){
-   if(damageCalc>0){
-      return victimProfile.healthPoints-=damageCalc();
+    console.log(damageCalc());
+   if(damageCalc()>0){
+      return victimProfile().healthPoints-=damageCalc();
    }
 }
 
 function winner(){
-   if (victimProfile.healthPoints<=0){
+   if (victimProfile().healthPoints<=0){
 
    }
    //else switch turns..
