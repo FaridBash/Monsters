@@ -1,11 +1,16 @@
+
 import { Monster} from "./monster.js";
 import{players} from "./player.js";
 
 
-function main(){
 
-    
 
-}
+const attackBtn=document.getElementsByClassName('attack');
 
-main()
+
+attackBtn[0].addEventListener('click', e=>{
+    alert(Monster.monsterDexterity);
+    console.log('atack');
+
+});
+
