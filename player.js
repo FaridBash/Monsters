@@ -2,6 +2,7 @@ import { randomNumbGenerator } from "./app.js";
 export const players=
    {
       name:"Fearless renegade",
+      type:"player",
       strength:22,
       defence:30,
       dexterity:6+randomNumbGenerator(),//random

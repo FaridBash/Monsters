@@ -78,7 +78,6 @@ function damageCalc(){
 }
 
 function attack(){
-
 if(damageCalc()>0){
       victimProfile().healthPoints-=damageCalc();
    }
@@ -87,14 +86,37 @@ if(damageCalc()>0){
 }
 
 function winner(){
-    if(victimProfile().healthPoints<=0){
-        alert(victimProfile().name +" LOST");
+    if(victimProfile().healthPoints<=0 && attackerProfile().type==="player"){
+        alert(`${attackerProfile.name} aka YOU have won the game`);
+        attackerProfile().gold+=victimProfile().gold;
+        attackerProfile().currentXP+=victimProfile().rewardXp;
+        console.log(players);
+
+        const message=document.createElement("div");
+        message.style.width="200px";
+        message.style.height="50px";
+        message.style.backgroundColor="#fff";
+        message.style.position="absolute";
+        message.style.top="10%";
+        message.style.left="40%";
+        message.style.opacity='0.8';
+        message.style.zIndex='3';
+        const sent=document.createElement('p');
+        sent.innerText=`${attackerProfile().name} Won the Game`;
+        document.body.appendChild(message);
+        message.appendChild(sent);
+        // setTimeout(message.style.display='none', 3000);
+
     }
+}
+
+function declareWinner(pl){
+    
 }
 
 
 //Location names Array
-let gameArena=['desert','castle','Fortress','waterfall','atlantis']
+let gameArena=['desert','castle','Fortress','waterfall','atlantis'];
 //Match each location with random number of monsters between 5-10.
 function random5_10(){
    return Math.floor(Math.random()*10)+5;
