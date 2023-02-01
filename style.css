@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Aboreto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Aboreto&family=Space+Grotesk&display=swap");
 
 * {
   padding: 0;
@@ -12,10 +12,7 @@ body {
   height: 100%;
   color: white;
   background-color: black;
-}
-
-div {
-  /* border: solid gray 1px; */
+  font-family: "Space Grotesk", sans-serif;
 }
 
 .combat-screen h1 {
@@ -113,6 +110,7 @@ div {
 .btn p {
   font-size: 2rem;
   margin-left: 0.5rem;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 .btn .btn-icon {
