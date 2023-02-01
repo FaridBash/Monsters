@@ -7,6 +7,11 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 body {
   width: 100%;
   height: 100%;
@@ -168,10 +173,13 @@ body {
 
 .btn-loc {
   padding: 1rem;
-  font-size: 1.8rem;
   border-radius: 10px;
   border: none;
   width: 70%;
+}
+
+.btn-loc a {
+  font-size: 1.8rem;
 }
 
 .btn-loc:hover {
