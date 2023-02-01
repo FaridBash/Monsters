@@ -211,8 +211,20 @@ body {
     "hp defense blank"
     "str frog burger";
   grid-gap: 15rem;
-  background-color: brown;
   padding: 8rem;
+  position: relative;
+  z-index:10;
+}
+
+.shop-content::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: brown;
+  opacity: 0.8;
 }
 
 .shop-content .no-stock {
@@ -236,6 +248,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index:10;
 }
 
 .shop-content .shop-item .item-img-wrap {
