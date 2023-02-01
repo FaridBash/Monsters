@@ -10,7 +10,7 @@
 body {
   width: 100%;
   height: 100%;
-  color:white;
+  color: white;
   background-color: black;
 }
 
@@ -35,7 +35,7 @@ div {
   width: 100%;
   height: 80%;
   justify-content: center;
-  background-image: url('/assets/img/combat-back.jpg');
+  background-image: url("/assets/img/combat-back.jpg");
 }
 
 .monster,
@@ -44,28 +44,28 @@ div {
   flex-direction: column;
   width: 20%;
   height: 80vh;
-  position:relative;
-  z-index:10;
+  position: relative;
+  z-index: 10;
   border: 1px solid black;
 }
 
 .monster::before,
 .player::before {
-    content: '';
-    width:100%;
-    height:100%;
-    position:absolute;
-    top:0;
-    left:0;
-    background-color: gray;
-    opacity: 0.6;
-    z-index:-2;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: gray;
+  opacity: 0.6;
+  z-index: -2;
 }
 
 .img-wrap {
   width: 100%;
   height: 60%;
-  padding:1.5rem;
+  padding: 1.5rem;
 }
 
 .img-wrap img {
@@ -93,35 +93,35 @@ div {
   font-size: 2rem;
   margin: 0 1rem;
   border-radius: 10px;
-  border:none;
-  display:flex;
+  border: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem;
 }
 
 .btn:hover {
-    background-color: gray;
-    cursor: pointer;
-    box-shadow: 1px 3px 2px 1px ;
+  background-color: gray;
+  cursor: pointer;
+  box-shadow: 1px 3px 2px 1px;
 }
 
 .btn:active {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 .btn p {
-    font-size: 2rem;
-    margin-left:.5rem;
+  font-size: 2rem;
+  margin-left: 0.5rem;
 }
 
 .btn .btn-icon {
-    width:2.3rem;
-    height:2.3rem;
+  width: 2.3rem;
+  height: 2.3rem;
 }
 
 .btn .btn-icon img {
-    height:100%;
+  height: 100%;
 }
 
 /* .btn img {
@@ -133,4 +133,11 @@ div {
 .player-details p span {
   margin: 1rem;
   font-size: 2rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .monster,
+  .player {
+    width:50%;
+  }
 }
