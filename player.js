@@ -1,4 +1,4 @@
-let players=[
+export let players=[
    {
       name:"Fearless renegade",
       strength:20,

@@ -11,7 +11,7 @@ export const Monster={
 }
 
 
-function monsterDexterity(){
+export function monsterDexterity(){
     return Math.floor(Math.random()*20)+1;
 }
 
