@@ -1,9 +1,11 @@
+
 export let players=[
+
    {
       name:"Fearless renegade",
       strength:20,
       defence:30,
-      dexterity:3,//random
+      dexterity:3+randomNumbGenerator(),//random
       goldAmount:5,
       potion:0,
       level:1,
@@ -12,10 +14,12 @@ export let players=[
    }
 ];
 
-const dexterityGenerator=(player)=>{
-   let rndm=Math.floor(Math.random()*20)+1;
-   return player.dexterity+=rndm;
+function randomNumbGenerator(){
+  return Math.floor(Math.random()*20)+1;
 }
 
+Qselector.addEventListerner("click",function attack(player){
+   let result=player.strength+=randomNumbGenerator();
 
+})
 
