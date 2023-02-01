@@ -8,7 +8,29 @@
     <title>Monsters</title>
   </head>
   <body>
-    <h1>Monters</h1>
+    <div class="combat-screen">
+      <h1>Combat! You fight against <span class="monster-name">MONSTER NAME</span></h1>
+      <div class="combat-container">
+        <div class="monster">
+          <div class="monster-img img">MONSTER IMAGE</div>
+          <div class="monster-hp hp">MONSTER HP</div>
+          <div class="actions bottom-combat">
+            <button class="attack">Attack</button>
+            <button class="run">Run Away</button>
+            <button class="drink">Drink Potion</button>
+          </div>
+        </div>
+        <div class="player">
+          <div class="player-img img">PLAYER IMAGE</div>
+          <div class="player-hp hp">PLAYER HP</div>
+          <div class="player-details bottom-combat">
+            <p>Name: <span class="player-name">NAME</span></p>
+            <p>Potions: <span class="potion-num">POTIONS</span></p>
+            <p>Dexterity: <span class="dex">DEXTERITY</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
   <script src="app.js"></script>
 </html>
