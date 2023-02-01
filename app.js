@@ -4,6 +4,7 @@ import{players} from "./player.js";
 
 let monsterTurn=false;
 
+
 //===== universal==variables and functions
 
 export function randomNumbGenerator(){
@@ -22,10 +23,13 @@ playerPotion[0].innerText=`${players.potion}`;
 const playerDex=document.getElementsByClassName('dex');
 playerDex[0].innerText=`${players.dexterity}`;
 
+
 const attackBtn=document.getElementsByClassName('attack');
 const runAwayBtn=document.getElementsByClassName('run');
 const drinkPotionBtn=document.getElementsByClassName('drink');
 
+let attackerProfile=monsterTurn===false?players:Monster;
+let victimProfile=monsterTurn===true?players:Monster;
 
 function attacker(){
     if (Monster.monsterDexterity>players.dexterity) monsterTurn=true;
@@ -34,10 +38,52 @@ function attacker(){
 
 attackBtn[0].addEventListener('click', e=>{
 
-console.log("monster attack: "+monsterTurn);
-console.log("monster dex: "+Monster.monsterDexterity);
-console.log("player dex: "+players.dexterity);
-
+    alert(Monster.monsterDexterity);
+    alert(players.dexterity);
+    console.log('atack');
 
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function damageCalc(){
+   return((randomNumbGenerator()+attackerProfile.strength)*attackerProfile.level)-attackerProfile.defence;
+}
+
+function attack(){
+   if(damageCalc>0){
+      return victimProfile.healthPoints-=damageCalc();
+   }
+}
+
+function winner(){
+   if (victimProfile.healthPoints<=0){
+
+   }
+   //else switch turns..
+}
+
+
+//Location names Array
+let gameArena=['desert','castle','Fortress','waterfall','atlantis']
+//Match each location with random number of monsters between 5-10.
+function random5_10(){
+   return Math.floor(Math.random()*10)+5;
+}
