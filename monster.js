@@ -1,7 +1,7 @@
 import { randomNumbGenerator } from "./app.js";
 export const Monster={
     name: "myMosnter",
-    ntrength: 100,
+    strength: 100,
     defence: 100,
     level: 100,
     health: 100,

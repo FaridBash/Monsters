@@ -2,17 +2,27 @@
 import { Monster} from "./monster.js";
 import{players} from "./player.js";
 
-let monsterTurn=false;
 
 //===== universal==variables and functions
+let monsterTurn=false;
 
 export function randomNumbGenerator(){
     return Math.floor(Math.random()*20)+1;
 }
+
+
+function attacker(){
+    if (Monster.dexterity>players.dexterity) monsterTurn=true;
+    else if(Monster.dexterity<players.dexterity) monsterTurn=false;
+}
+
+attacker();
+if(monsterTurn===false) alert("player is attacking");
+else alert("monster is attacking");
   
 // universal functions end
 const monsterHp=document.getElementsByClassName('monster-hp');
-monsterHp[0].innerText+=`: ${Monster.monsterStrength}`;
+monsterHp[0].innerText+=`: ${Monster.strength}`;
 const playerHp=document.getElementsByClassName('player-hp');
 playerHp[0].innerText+=`: ${players.strength}`;
 const playerName=document.getElementsByClassName('player-name');
@@ -27,15 +37,10 @@ const runAwayBtn=document.getElementsByClassName('run');
 const drinkPotionBtn=document.getElementsByClassName('drink');
 
 
-function attacker(){
-    if (Monster.monsterDexterity>players.dexterity) monsterTurn=true;
-    else if(Monster.monsterDexterity<players.dexterity) monsterTurn=false;
-}
-
 attackBtn[0].addEventListener('click', e=>{
 
 console.log("monster attack: "+monsterTurn);
-console.log("monster dex: "+Monster.monsterDexterity);
+console.log("monster dex: "+Monster.dexterity);
 console.log("player dex: "+players.dexterity);
 
 
