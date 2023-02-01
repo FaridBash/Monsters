@@ -7,8 +7,14 @@ const playerHp=document.getElementsByClassName('player-hp');
 const playerName=document.getElementsByClassName('player-name');
 const playerPotion=document.getElementsByClassName('potion-num');
 const playerDex=document.getElementsByClassName('dex');
-
-
+//Location names Array
+let gameArenas=['krustyKrab','forest','castle','waterfall','appleseeds-bootcamp'];
+//arenas-pictures <a tags>(when pressed the compatible monster cards show on the "contracts" page)
+const krustyKrab=document.querySelector('#krustyKrab');
+const forest=document.querySelector('#forest');
+const castle=document.querySelector('#castle');
+const waterfall=document.querySelector('#waterfall');
+const appleseedsBootcamp=document.querySelector('#appleseeds-bootcamp');
 //===== universal==variables and functions
 let monsterTurn=false;
 
@@ -28,6 +34,7 @@ export function randomNumbGenerator(){
 function attacker(){
     if (Monster.dexterity>players.dexterity) monsterTurn=true;
     else if(Monster.dexterity<players.dexterity) monsterTurn=false;
+    
 }
 
 attacker();
@@ -95,8 +102,19 @@ function winner(){
 }
 
 
-//Location names Array
-let gameArenas=['desert','castle','Fortress','waterfall','atlantis'];
+
+
+
+//if i press on a ,addeventlistener when i press on a map picture to show the specific
+// monsters for that map:
+for(let x=0;x<gameArenas.length;x++){
+    if (gameArenas[x]==="krustyKrab"){
+        return 
+    }
+}
+krustyKrab.addEventListener('click',function(){
+    
+})
 //Match each location with random number of monsters between 5-10.
 function random1_5(){
    return Math.floor(Math.random()*5)+1;
