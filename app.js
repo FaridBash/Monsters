@@ -37,7 +37,6 @@ function attacker(){
 }
 
 attackBtn[0].addEventListener('click', e=>{
-
     alert(Monster.monsterDexterity);
     alert(players.dexterity);
     console.log('atack');
@@ -55,20 +54,12 @@ attackBtn[0].addEventListener('click', e=>{
 
 
 
-
-
-
-
-
-
-
-
 function damageCalc(){
    return((randomNumbGenerator()+attackerProfile.strength)*attackerProfile.level)-attackerProfile.defence;
 }
 
 function attack(){
-   if(damageCalc>0){
+   if(damageCalc()>0){
       return victimProfile.healthPoints-=damageCalc();
    }
 }
