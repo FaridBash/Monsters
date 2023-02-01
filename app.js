@@ -3,6 +3,8 @@ import {MonsArr} from "./monster.js";
 import{players} from "./player.js";
 
 console.log(MonsArr[0]);
+
+// monster & player features
 const monsterHp=document.getElementsByClassName('monster-hp');
 const monsterName=document.getElementsByClassName('monster-name');
 const monsterDefence=document.getElementsByClassName('monster-def');
@@ -15,12 +17,25 @@ const monsterXp=document.getElementsByClassName('monster-XP');
 const playerHp=document.getElementsByClassName('player-hp');
 const playerName=document.getElementsByClassName('player-name');
 const playerDex=document.getElementsByClassName('dex');
+
+//Location names Array
+let gameArenas=['krustyKrab','forest','castle','waterfall','appleseeds-bootcamp'];
+//arenas-pictures <a tags>(when pressed the compatible monster cards show on the "contracts" page)
+const krustyKrab=document.querySelector('krusty-krab-btn');
+const forest=document.querySelector('#forest');
+const castle=document.querySelector('#castle');
+const waterfall=document.querySelector('#waterfall');
+const appleseedsBootcamp=document.querySelector('#appleseeds-bootcamp');
+
+
+// monster & player features
 const playerDef=document.getElementsByClassName('player-def');
 const playerGold=document.getElementsByClassName('player-gold');
 const playerLevel=document.getElementsByClassName('player-lvl');
 const playerXp=document.getElementsByClassName('player-XP');
 const playerPotion=document.getElementsByClassName('potion-num');
 const playerStrength=document.getElementsByClassName('player-str');
+
 
 
 //===== universal==variables and functions
@@ -40,9 +55,11 @@ export function randomNumbGenerator(){
 
 
 function attacker(){
+
     if (MonsArr[0].dexterity>players.dexterity) monsterTurn=true;
     else if(MonsArr[0].dexterity<players.dexterity) monsterTurn=false;
     else if(MonsArr[0].dexterity===players.dexterity) attacker();
+
 }
 
 attacker();
@@ -120,7 +137,10 @@ function winner(){
         alert(`${attackerProfile.name} aka YOU have won the game`);
         attackerProfile().gold+=victimProfile().gold;
         attackerProfile().currentXP+=victimProfile().rewardXp;
-        console.log(players);
+
+       console.log(players);
+
+       
 
         // const message=document.createElement("div");
         // message.style.width="200px";
@@ -137,6 +157,7 @@ function winner(){
         // message.appendChild(sent);
         // setTimeout(message.style.display='none', 3000);
 
+
     }
 }
 
@@ -145,9 +166,29 @@ function declareWinner(pl){
 }
 
 
-//Location names Array
-let gameArena=['desert','castle','Fortress','waterfall','atlantis'];
-//Match each location with random number of monsters between 5-10.
-function random5_10(){
-   return Math.floor(Math.random()*10)+5;
+
+
+
+//if i press on a ,addeventlistener when i press on a map picture to show the specific
+// monsters for that map:
+for(let x=0;x<gameArenas.length;x++){
+    if (gameArenas[x]==="krustyKrab"){
+        return 
+    }
 }
+krustyKrab.addEventListener('click',function(){
+    
+})
+//Match each location with random number of monsters between 5-10.
+function random1_5(){
+   return Math.floor(Math.random()*5)+1;
+}
+
+
+// function matchMonsterArena(){
+//     for(let i=0;i<gameArenas.length;i++){
+        
+//     }
+//     #monsterImg.setAttribute("src",`./assets/monster-${random1_5()}`); 
+//     #arenaImg.setAttribute("src",`./assets/arena-${random1_5()}`);
+// }
