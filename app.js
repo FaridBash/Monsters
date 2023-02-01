@@ -2,10 +2,23 @@
 import { Monster} from "./monster.js";
 import{players} from "./player.js";
 
+const monsterHp=document.getElementsByClassName('monster-hp');
+const playerHp=document.getElementsByClassName('player-hp');
+const playerName=document.getElementsByClassName('player-name');
+const playerPotion=document.getElementsByClassName('potion-num');
+const playerDex=document.getElementsByClassName('dex');
 
 
 //===== universal==variables and functions
 let monsterTurn=false;
+
+let victimProfile=()=>{
+    return monsterTurn===true?players:Monster;
+}
+let attackerProfile=()=>{
+    return monsterTurn===false?players:Monster;
+}
+
 
 export function randomNumbGenerator(){
     return Math.floor(Math.random()*20)+1;
@@ -22,30 +35,26 @@ if(monsterTurn===false) console.log("player is attacking");
 else console.log("monster is attacking");
   
 // universal functions end
-const monsterHp=document.getElementsByClassName('monster-hp');
 monsterHp[0].innerText+=`: ${Monster.healthPoints}`;
-const playerHp=document.getElementsByClassName('player-hp');
 playerHp[0].innerText+=`: ${players.healthPoints}`;
-const playerName=document.getElementsByClassName('player-name');
 playerName[0].innerText=`${players.name}`;
-const playerPotion=document.getElementsByClassName('potion-num');
 playerPotion[0].innerText=`${players.potion}`;
-const playerDex=document.getElementsByClassName('dex');
 playerDex[0].innerText=`${players.dexterity}`;
 
-
+function updateHealth(){
+    if(victimProfile()===players){
+        document.getElementsByClassName('player-hp')[0].innerText=`Player Hp: ${victimProfile().healthPoints}`;
+    }
+    if(victimProfile()===Monster){
+        document.getElementsByClassName('monster-hp')[0].innerText=`Monster Hp: ${victimProfile().healthPoints}`;
+    }
+}
 const attackBtn=document.getElementsByClassName('attack');
 const runAwayBtn=document.getElementsByClassName('run');
 const drinkPotionBtn=document.getElementsByClassName('drink');
 
 // let attackerProfile=monsterTurn===false?players:Monster;
 // let victimProfile=monsterTurn===true?players:Monster;
-let victimProfile=()=>{
-    return monsterTurn===true?players:Monster;
-}
-let attackerProfile=()=>{
-    return monsterTurn===false?players:Monster;
-}
 
 
 attackBtn[0].addEventListener('click', e=>{
@@ -66,6 +75,7 @@ function attack(){
    if(damageCalc()>0){
       return victimProfile().healthPoints-=damageCalc();
    }
+   updateHealth();
 }
 
 function winner(){
