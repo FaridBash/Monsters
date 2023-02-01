@@ -58,30 +58,12 @@ const drinkPotionBtn=document.getElementsByClassName('drink');
 
 
 attackBtn[0].addEventListener('click', e=>{
-
-    alert(Monster.monsterDexterity);
-    alert(players.dexterity);
+    attack();
+    // alert(Monster.monsterDexterity);
+    // alert(players.dexterity);
     console.log('atack');
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 function damageCalc(){
@@ -96,14 +78,9 @@ function damageCalc(){
 }
 
 function attack(){
-<<<<<<< HEAD
-   if(damageCalc>0){
-      return victimProfile.healthPoints-=damageCalc();
-=======
 
 if(damageCalc()>0){
       victimProfile().healthPoints-=damageCalc();
->>>>>>> 60cbe20552b6d235dbe50b820f11c83c1c52f5fd
    }
    updateHealth();
    winner();
