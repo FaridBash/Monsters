@@ -173,11 +173,7 @@ function declareWinner(pl){
 
 //if i press on a ,addeventlistener when i press on a map picture to show the specific
 // monsters for that map:
- for(let x=0;x<gameArenas.length;x++){
-     if (gameArenas[x]==="krustyKrab"){
-         return 
-     }
- }
+
  krustyKrab.addEventListener('click',function(){
     card1.innerHTML=
     `<li>${MonsArr[0].name}</li>
@@ -256,6 +252,7 @@ choosbtn.addEventListener("click",function(){
         if(MonsArr[i].name===)
     }
 })
+
 //Match each location with random number of monsters between 5-10.
 function random1_5(){
    return Math.floor(Math.random()*5)+1;
