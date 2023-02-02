@@ -28,17 +28,19 @@ export class PlayersClass{
     }
 }
 
-const testPlayer=new PlayersClass("test1", "player", 11, 11, randomNumbGenerator(), 0,10,1,100,0);
-PlayersArr.push(testPlayer);
+// const testPlayer=new PlayersClass("test1", "player", 11, 11, randomNumbGenerator(), 0,10,1,100,0);
+// PlayersArr.push(testPlayer);
 
 
 export function createNewPlayer(pName, pStrength, pDef, pDex){
-   return p=new PlayersClass(pName, 'player', pStrength,
+   const p=new PlayersClass(pName, 'player', pStrength,
    pDef, pDex, 0, 20, 1, 100, 0);
+
+   return p;
 }
 
 
-console.log(PlayersArr[0]);
+// console.log(PlayersArr[0]);
 
 
 
@@ -46,17 +48,16 @@ createBtn.addEventListener('click', e=>{
     const pName=playerNameInput.value;
     const pStrength=Number(playerStrengthInput.value);
     const pDef=Number(playerDefInput.value);
-    const pDex=Number(playerDexInput.value)+randomNumbGenerator();
-
+    const pDex=Number(playerDexInput.value);
+    // pDex+=+randomNumbGenerator();
     localStorage.setItem('pName',pName);
     localStorage.setItem('pStrength',pStrength);
     localStorage.setItem('pDef',pDef);
     localStorage.setItem('pDex',pDex);
 
     PlayersArr.push(createNewPlayer(pName, Number(pStrength), Number(pDef), Number(pDex)));
-
+    alert(PlayersArr[0].name+" "+ PlayersArr[0].strength);
+    console.log(PlayersArr[0].name+" "+ PlayersArr[0].strength);
 
 });
 
-
-console.log(PlayersArr);
