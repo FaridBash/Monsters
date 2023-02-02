@@ -1,3 +1,4 @@
+
 import{card1,card2} from "./contracts.js";
 import { MonsArr } from "./monster.js";
 //location-picures <a tags>(when pressed the compatible monster cards show on the "contracts" page)
@@ -81,3 +82,4 @@ appleseedsBootcamp.addEventListener('click',function(){
   <li>${MonsArr[9].gold}</li>
   <li>${MonsArr[9].rewardXp}</li>`
 })
+

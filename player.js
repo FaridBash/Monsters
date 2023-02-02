@@ -13,7 +13,10 @@ export const players=
       currentXP:0
    }
 
-
+const pName=localStorage.getItem('pName');
+const pStrength=localStorage.getItem('pStrength');
+const pDef=localStorage.getItem('pDef');
+const pDex=localStorage.getItem('pDex');
 
 
 // createBtn.style.backgroundColor='red';
