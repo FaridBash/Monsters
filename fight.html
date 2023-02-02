@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Monsters</title>
+  </head>
+  <body>
+    <div class="combat-screen">
+      <!-- <h1>
+        Combat! You fight against <span class="monster-name">MONSTER NAME</span>
+      </h1> -->
+      <div class="actions">
+        <button class="attack btn">
+          <div class="btn-icon">
+            <img src="/assets/img/sword2.png" alt="" />
+          </div>
+          <p>Attack</p>
+        </button>
+        <button class="run btn">
+          <div class="btn-icon">
+            <img src="/assets/img/run.png" alt="" />
+          </div>
+          <p>Run Away</p>
+        </button>
+        <button class="drink btn">
+          <div class="btn-icon">
+            <img
+              src="/assets/img/pngtree-life-potion-png-image_6110936-removebg-preview.png"
+              alt=""
+            />
+          </div>
+          <p>Drink Potion</p>
+        </button>
+      </div>
+      <div class="combat-container">
+        <div class="monster">
+          <div class="monster-img img-wrap">
+            <img src="/assets/img/FollowingDraugr.gif" alt="" />
+          </div>
+          <div class="monster-hp hp">MONSTER HP</div>
+          <div class="monster-details bottom-combat">
+            <p>Name: <span class="monster-name">NAME</span></p>
+            <p>Defense: <span class="monster-def">Defense</span></p>
+            <p>Dexterity: <span class="monster-dex">DEXTERITY</span></p>
+            <p>Gold: <span class="monster-gold">GOLD</span></p>
+            <p>Level: <span class="monster-lvl">LEVEL</span></p>
+            <p>XP: <span class="monster-XP">XP</span></p>
+          </div>
+        </div>
+        <div class="player">
+          <div class="player-img img-wrap">
+            <img src="/assets/img/Father.img.walk.gif" alt="" />
+          </div>
+          <div class="player-hp hp">PLAYER HP</div>
+          <div class="player-details bottom-combat">
+            <p>Name: <span class="player-name">NAME</span></p>
+            <p>Strength: <span class="player-str">STRENGTH</span></p>
+            <p>Defense: <span class="player-def">DEFENSE</span></p>
+            <p>Dexterity: <span class="dex">DEXTERITY</span></p>
+            <p>Gold: <span class="player-gold">GOLD</span></p>
+            <p>Potions: <span class="potion-num">POTIONS</span></p>
+            <p>Level: <span class="player-lvl">Level</span></p>
+            <p>Current XP: <span class="player-XP">XP</span></p>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./fight.js" defer type="module"></script>
+</html>
