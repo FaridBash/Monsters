@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="character-create">
+    <div class="character-create opening-background">
       <ul class="char-form">
         <li>
           <p>Player Name:</p>
@@ -27,11 +27,17 @@
           <input type="text" id="dex" required />
         </li>
         <li>
-          <button id="create">Create Player</button>
+          <button id="create" class="btn">
+            <a href="/locations.html" class="create">Create Player</a>
+          </button>
         </li>
         <p></p>
       </ul>
+      <div class="character-img-wrap">
+        <img src="/assets/img/FollowerOfTheShepard.gif" alt="" />
+      </div>
     </div>
+    <script src="./app.js" defer type="module"></script>
   </body>
-  <script src="./app.js" defer type="module"></script>
+  
 </html>
