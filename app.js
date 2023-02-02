@@ -28,8 +28,11 @@ const krustyKrab=document.querySelector('#krusty-krab');
 const forest=document.querySelector('#forest');
 const castle=document.querySelector('#castle');
 const waterfall=document.querySelector('#waterfall');
-const appleseedsBootcamp=document.querySelector('#appleseeds-bootcamp');
+const appleseedsBootcamp=document.querySelector('#bootcamp');
+//contracts.html the 2 monsters cards
 
+const card1=document.querySelector('#card-1');
+const card2=document.querySelector('#card-2');
 
 // monster & player features
 const playerDef=document.getElementsByClassName('player-def');
@@ -58,7 +61,6 @@ export function randomNumbGenerator(){
 
 
 function attacker(){
-
     if (MonsArr[0].dexterity>players.dexterity) monsterTurn=true;
     else if(MonsArr[0].dexterity<players.dexterity) monsterTurn=false;
     else if(MonsArr[0].dexterity===players.dexterity) attacker();
@@ -174,14 +176,86 @@ function declareWinner(pl){
 
 //if i press on a ,addeventlistener when i press on a map picture to show the specific
 // monsters for that map:
-for(let x=0;x<gameArenas.length;x++){
-    if (gameArenas[x]==="krustyKrab"){
-        // return  ;
+
+ krustyKrab.addEventListener('click',function(){
+    card1.innerHTML=
+    `<li>${MonsArr[0].name}</li>
+    <li>${MonsArr[0].level}</li>
+    <li>${MonsArr[0].healthPoints}</li>
+    <li>${MonsArr[0].gold}</li>
+    <li>${MonsArr[0].rewardXp}</li>`
+    card2.innerHTML=
+    `<li>${MonsArr[1].name}</li>
+    <li>${MonsArr[1].level}</li>
+    <li>${MonsArr[1].healthPoints}</li>
+    <li>${MonsArr[1].gold}</li>
+    <li>${MonsArr[1].rewardXp}</li>`
+ })
+ forest.addEventListener('click',function(){
+    card1.innerHTML=
+   `<li>${MonsArr[2].name}</li>
+    <li>${MonsArr[2].level}</li>
+    <li>${MonsArr[2].healthPoints}</li>
+    <li>${MonsArr[2].gold}</li>
+    <li>${MonsArr[2].rewardXp}</li>`
+    card2.innerHTML=
+   `<li>${MonsArr[3].name}</li>
+    <li>${MonsArr[3].level}</li>
+    <li>${MonsArr[3].healthPoints}</li>
+    <li>${MonsArr[3].gold}</li>
+    <li>${MonsArr[3].rewardXp}</li>`
+ })
+ castle.addEventListener('click',function(){
+    card1.innerHTML=
+   `<li>${MonsArr[4].name}</li>
+    <li>${MonsArr[4].level}</li>
+    <li>${MonsArr[4].healthPoints}</li>
+    <li>${MonsArr[4].gold}</li>
+    <li>${MonsArr[4].rewardXp}</li>`
+    card2.innerHTML=
+    `<li>${MonsArr[5].name}</li>
+    <li>${MonsArr[5].level}</li>
+    <li>${MonsArr[5].healthPoints}</li>
+    <li>${MonsArr[5].gold}</li>
+    <li>${MonsArr[5].rewardXp}</li>`
+ })
+ waterfall.addEventListener('click',function(){
+    card1.innerHTML=
+    `<li>${MonsArr[6].name}</li>
+    <li>${MonsArr[6].level}</li>
+    <li>${MonsArr[6].healthPoints}</li>
+    <li>${MonsArr[6].gold}</li>
+    <li>${MonsArr[6].rewardXp}</li>`
+    card2.innerHTML=
+    `<li>${MonsArr[7].name}</li>
+    <li>${MonsArr[7].level}</li>
+    <li>${MonsArr[7].healthPoints}</li>
+    <li>${MonsArr[7].gold}</li>
+    <li>${MonsArr[7].rewardXp}</li>`
+ })
+ appleseedsBootcamp.addEventListener('click',function(){
+    card1.innerHTML=
+    `<li>${MonsArr[8].name}</li>
+    <li>${MonsArr[8].level}</li>
+    <li>${MonsArr[8].healthPoints}</li>
+    <li>${MonsArr[8].gold}</li>
+    <li>${MonsArr[8].rewardXp}</li>`
+    card2.innerHTML=
+    `<li>${MonsArr[9].name}</li>
+    <li>${MonsArr[9].level}</li>
+    <li>${MonsArr[9].healthPoints}</li>
+    <li>${MonsArr[9].gold}</li>
+    <li>${MonsArr[9].rewardXp}</li>`
+ })
+
+
+///function when we press the choos button on each monster ,takes this monster as an opponent
+choosbtn.addEventListener("click",function(){
+    for(let i=0;i<MonsArr.length;i++){
+        if(MonsArr[i].name===)
     }
-}
-// krustyKrab.addEventListener('click',e=>{
-    
-// });
+})
+
 //Match each location with random number of monsters between 5-10.
 function random1_5(){
    return Math.floor(Math.random()*5)+1;
