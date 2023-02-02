@@ -1,10 +1,13 @@
 
 import {MonsArr} from "./monster.js";
-import{players} from "./player.js";
+import{players } from "./player.js";
 
 console.log(MonsArr[0]);
 
 // monster & player features
+
+const createBtn=document.getElementById('create');
+
 const monsterHp=document.getElementsByClassName('monster-hp');
 const monsterName=document.getElementsByClassName('monster-name');
 const monsterDefence=document.getElementsByClassName('monster-def');
@@ -266,3 +269,52 @@ function random1_5(){
 //     #monsterImg.setAttribute("src",`./assets/monster-${random1_5()}`); 
 //     #arenaImg.setAttribute("src",`./assets/arena-${random1_5()}`);
 // }
+
+
+const PlayersArr=[];
+export class PlayersClass{
+    constructor(name, type, strength, defence, dexterity, gold, potion, level, healthPoints, currentXp){
+        this.name=name;
+        this.type=type;
+        this.strength=strength;
+        this.defence=defence;
+        this.dexterity=dexterity;
+        this.gold=gold;
+        this.potion=potion;
+        this.level=level;
+        this.healthPoints=healthPoints;
+        this.currentXp=currentXp;
+    }
+}
+
+const testPlayer=new PlayersClass("test1", "player", 11, 11, randomNumbGenerator(), 0,10,1,100,0);
+PlayersArr.push(testPlayer);
+
+
+
+const playerNameInput=document.getElementById('player-name');
+const playerDefInput=document.getElementById('def');
+const playerStrengthInput=document.getElementById('str');
+const playerDexInput=document.getElementById('dex');
+
+
+createBtn.addEventListener('click', e=>{
+    console.log('createBtn');
+});
+
+// createBtn.addEventListener('click', e=>{
+//     // =new PlayersClass(playerNameInput.innerText, 'player', Number(playerStrengthInput.innerText),
+//     // Number(playerDefInput.innerText), (Number(playerDexInput.innerText)+randomNumbGenerator()), 0, 20, 1, 100, 0);
+//     // PlayersArr.push(newPlayer);
+//     const newPlayer=createNewPlayer();
+//     PlayersArr.push(newPlayer);
+ 
+//  });
+
+ export function createNewPlayer(){
+    return new PlayersClass(playerNameInput.innerText, 'player', Number(playerStrengthInput.innerText),
+    Number(playerDefInput.innerText), (Number(playerDexInput.innerText)+randomNumbGenerator()), 0, 20, 1, 100, 0);
+ }
+ 
+
+ console.log(PlayersArr[0]);
