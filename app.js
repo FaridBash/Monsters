@@ -46,7 +46,7 @@ const playerStrength=document.getElementsByClassName('player-str');
 
 //===== universal==variables and functions
 let monsterTurn=false;
-
+let whichMonster=0;
 let victimProfile=()=>{
     return monsterTurn===true?players:MonsArr[0];
 }
@@ -70,7 +70,7 @@ function attacker(){
 attacker();
 if(monsterTurn===false) console.log("player is attacking");
 else console.log("monster is attacking");
-
+card1.innerHTML=`<li id="monster-2-name">${MonsArr[3].name}</li>`;
 // universal functions end
 monsterXp[0].innerText=` ${MonsArr[0].rewardXp}`;
 monsterHp[0].innerText+=` ${MonsArr[0].healthPoints}`;
@@ -177,29 +177,37 @@ function declareWinner(pl){
 //if i press on a ,addeventlistener when i press on a map picture to show the specific
 // monsters for that map:
 
- krustyKrab.addEventListener('click',function(){
-    card1.innerHTML=
-    `<li>${MonsArr[0].name}</li>
-    <li>${MonsArr[0].level}</li>
-    <li>${MonsArr[0].healthPoints}</li>
-    <li>${MonsArr[0].gold}</li>
-    <li>${MonsArr[0].rewardXp}</li>`
-    card2.innerHTML=
-    `<li>${MonsArr[1].name}</li>
-    <li>${MonsArr[1].level}</li>
-    <li>${MonsArr[1].healthPoints}</li>
-    <li>${MonsArr[1].gold}</li>
-    <li>${MonsArr[1].rewardXp}</li>`
- })
+//  krustyKrab.addEventListener('click',function(){
+//     card1.innerHTML=
+//     `<li id="monster-1-name">${MonsArr[0].name}</li>
+//     <li>${MonsArr[0].level}</li>
+//     <li>${MonsArr[0].healthPoints}</li>
+//     <li>${MonsArr[0].gold}</li>
+//     <li>${MonsArr[0].rewardXp}</li>`
+//     card2.innerHTML=
+//     `<li id="monster-2-name">${MonsArr[1].name}</li>
+//     <li>${MonsArr[1].level}</li>
+//     <li>${MonsArr[1].healthPoints}</li>
+//     <li>${MonsArr[1].gold}</li>
+//     <li>${MonsArr[1].rewardXp}</li>`
+//  })
+
+
+card2.innerHTML=
+`<li id="monster-2-name">${MonsArr[1].name}</li>
+<li>${MonsArr[1].level}</li>
+<li>${MonsArr[1].healthPoints}</li>
+<li>${MonsArr[1].gold}</li>
+<li>${MonsArr[1].rewardXp}</li>`
  forest.addEventListener('click',function(){
     card1.innerHTML=
-   `<li>${MonsArr[2].name}</li>
+   `<li id="monster-1-name">${MonsArr[2].name}</li>
     <li>${MonsArr[2].level}</li>
     <li>${MonsArr[2].healthPoints}</li>
     <li>${MonsArr[2].gold}</li>
     <li>${MonsArr[2].rewardXp}</li>`
     card2.innerHTML=
-   `<li>${MonsArr[3].name}</li>
+   `<li id="monster-2-name">${MonsArr[3].name}</li>
     <li>${MonsArr[3].level}</li>
     <li>${MonsArr[3].healthPoints}</li>
     <li>${MonsArr[3].gold}</li>
@@ -207,13 +215,13 @@ function declareWinner(pl){
  })
  castle.addEventListener('click',function(){
     card1.innerHTML=
-   `<li>${MonsArr[4].name}</li>
+   `<li id="monster-1-name">${MonsArr[4].name}</li>
     <li>${MonsArr[4].level}</li>
     <li>${MonsArr[4].healthPoints}</li>
     <li>${MonsArr[4].gold}</li>
     <li>${MonsArr[4].rewardXp}</li>`
     card2.innerHTML=
-    `<li>${MonsArr[5].name}</li>
+    `<li id="monster-2-name">${MonsArr[5].name}</li>
     <li>${MonsArr[5].level}</li>
     <li>${MonsArr[5].healthPoints}</li>
     <li>${MonsArr[5].gold}</li>
@@ -221,13 +229,13 @@ function declareWinner(pl){
  })
  waterfall.addEventListener('click',function(){
     card1.innerHTML=
-    `<li>${MonsArr[6].name}</li>
+    `<li id="monster-1-name">${MonsArr[6].name}</li>
     <li>${MonsArr[6].level}</li>
     <li>${MonsArr[6].healthPoints}</li>
     <li>${MonsArr[6].gold}</li>
     <li>${MonsArr[6].rewardXp}</li>`
     card2.innerHTML=
-    `<li>${MonsArr[7].name}</li>
+    `<li id="monster-2-name">${MonsArr[7].name}</li>
     <li>${MonsArr[7].level}</li>
     <li>${MonsArr[7].healthPoints}</li>
     <li>${MonsArr[7].gold}</li>
@@ -235,13 +243,13 @@ function declareWinner(pl){
  })
  appleseedsBootcamp.addEventListener('click',function(){
     card1.innerHTML=
-    `<li>${MonsArr[8].name}</li>
+    `<li id="monster-1-name">${MonsArr[8].name}</li>
     <li>${MonsArr[8].level}</li>
     <li>${MonsArr[8].healthPoints}</li>
     <li>${MonsArr[8].gold}</li>
     <li>${MonsArr[8].rewardXp}</li>`
     card2.innerHTML=
-    `<li>${MonsArr[9].name}</li>
+    `<li id="monster-2-name">${MonsArr[9].name}</li>
     <li>${MonsArr[9].level}</li>
     <li>${MonsArr[9].healthPoints}</li>
     <li>${MonsArr[9].gold}</li>
@@ -249,10 +257,17 @@ function declareWinner(pl){
  })
 
 
+ //query selectors for the above monsters cards
+const monsterName1=document.querySelector('#monster-1-name');
+const monsterName2=document.querySelector('#monster-2-name');
+const monsterFight1=document.querySelector('#monster-fight-1');
+const monsterFight2=document.querySelector('#monster-fight-2');
 ///function when we press the choos button on each monster ,takes this monster as an opponent
-choosbtn.addEventListener("click",function(){
+monsterFight1.addEventListener("click",function(){
     for(let i=0;i<MonsArr.length;i++){
-        if(MonsArr[i].name===)
+        if(MonsArr[i].name==monsterName1){
+            whichMonster=i;
+        }
     }
 })
 
